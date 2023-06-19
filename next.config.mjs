@@ -5,7 +5,10 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ['cos.codefe.top'],
+    domains: [
+      "programnotes.cn",
+      "nav.programnotes.cn"
+    ],
   }
 }
 

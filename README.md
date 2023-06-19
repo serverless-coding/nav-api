@@ -64,3 +64,7 @@ npx prisma db push
 ```sh
 pnpm dev
 ```
+
+### 使用postgressql
+
+修改schema.prisma和.env里的配置
