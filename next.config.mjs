@@ -6,7 +6,8 @@ const nextConfig = {
   },
   images: {
     domains: [
-      "cos.codefe.top"
+      "programnotes.cn",
+      "nav.programnotes.cn"
     ],
   }
 }

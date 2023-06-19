@@ -11,7 +11,7 @@ export const siteConfig = {
     },
   ],
   links: {
-    github: "https://github.com/wangfengyuan/frontend-nav",
+    github: "https://github.com/serverless-coding/frontend-nav",
     docs: "",
   },
 }
