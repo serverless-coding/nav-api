@@ -21,7 +21,6 @@ func Use(db *gorm.DB, opts ...gen.DOOption) *Query {
 		Account:           newAccount(db, opts...),
 		Category:          newCategory(db, opts...),
 		Link:              newLink(db, opts...),
-		PrismaMigration:   newPrismaMigration(db, opts...),
 		Session:           newSession(db, opts...),
 		User:              newUser(db, opts...),
 		VerificationToken: newVerificationToken(db, opts...),
@@ -34,7 +33,6 @@ type Query struct {
 	Account           account
 	Category          category
 	Link              link
-	PrismaMigration   prismaMigration
 	Session           session
 	User              user
 	VerificationToken verificationToken
@@ -48,7 +46,6 @@ func (q *Query) clone(db *gorm.DB) *Query {
 		Account:           q.Account.clone(db),
 		Category:          q.Category.clone(db),
 		Link:              q.Link.clone(db),
-		PrismaMigration:   q.PrismaMigration.clone(db),
 		Session:           q.Session.clone(db),
 		User:              q.User.clone(db),
 		VerificationToken: q.VerificationToken.clone(db),
@@ -69,7 +66,6 @@ func (q *Query) ReplaceDB(db *gorm.DB) *Query {
 		Account:           q.Account.replaceDB(db),
 		Category:          q.Category.replaceDB(db),
 		Link:              q.Link.replaceDB(db),
-		PrismaMigration:   q.PrismaMigration.replaceDB(db),
 		Session:           q.Session.replaceDB(db),
 		User:              q.User.replaceDB(db),
 		VerificationToken: q.VerificationToken.replaceDB(db),
@@ -80,7 +76,6 @@ type queryCtx struct {
 	Account           *accountDo
 	Category          *categoryDo
 	Link              *linkDo
-	PrismaMigration   *prismaMigrationDo
 	Session           *sessionDo
 	User              *userDo
 	VerificationToken *verificationTokenDo
@@ -91,7 +86,6 @@ func (q *Query) WithContext(ctx context.Context) *queryCtx {
 		Account:           q.Account.WithContext(ctx),
 		Category:          q.Category.WithContext(ctx),
 		Link:              q.Link.WithContext(ctx),
-		PrismaMigration:   q.PrismaMigration.WithContext(ctx),
 		Session:           q.Session.WithContext(ctx),
 		User:              q.User.WithContext(ctx),
 		VerificationToken: q.VerificationToken.WithContext(ctx),

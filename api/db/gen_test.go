@@ -80,7 +80,6 @@ func Test_WithContext(t *testing.T) {
 		qCtx.Account.UnderlyingDB().Statement.Context,
 		qCtx.Category.UnderlyingDB().Statement.Context,
 		qCtx.Link.UnderlyingDB().Statement.Context,
-		qCtx.PrismaMigration.UnderlyingDB().Statement.Context,
 		qCtx.Session.UnderlyingDB().Statement.Context,
 		qCtx.User.UnderlyingDB().Statement.Context,
 		qCtx.VerificationToken.UnderlyingDB().Statement.Context,

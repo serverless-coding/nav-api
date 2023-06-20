@@ -68,3 +68,9 @@ pnpm dev
 ### 使用postgressql
 
 修改schema.prisma和.env里的配置
+
+
+gentool -tables "accounts,category,link,sessions,users,verification_tokens" -dsn "postgresql://postgres:iQW2h.vAsy4NdH4@db.hcnrthggzjnngadpnlrs.supabase.co:5432/postgres" -db postgres -outPath ./api/db -withUnitTest true 
+
+
+gentool -dsn "postgresql://postgres:iQW2h.vAsy4NdH4@db.hcnrthggzjnngadpnlrs.supabase.co:5432/postgres" -db postgres -outPath ./api/db -withUnitTest true -tables "accounts,category,link,sessions,users,verification_tokens"
