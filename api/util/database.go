@@ -1,15 +1,11 @@
 package util
 
 import (
-	"gorm.io/driver/postgres"
-	"gorm.io/gorm"
+	"github.com/serverless-coding/frontend-nav/api/config"
+	"github.com/serverless-coding/frontend-nav/api/db"
 )
 
-func NewDB() (*gorm.DB, error) {
-	db, err := gorm.Open(postgres.New(postgres.Config{}))
-	if err != nil {
-		return nil, err
-	}
-
-	return db, nil
+func Init() {
+	conf := config.ParseConfig()
+	db.Init(conf.DatabaseUrl)
 }
