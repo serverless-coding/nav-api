@@ -3,8 +3,8 @@ module github.com/serverless-coding/frontend-nav
 go 1.19
 
 require (
+	github.com/glebarez/sqlite v1.8.0
 	gorm.io/driver/postgres v1.5.2
-	gorm.io/driver/sqlite v1.4.3
 	gorm.io/gen v0.3.22
 	gorm.io/gorm v1.25.1
 	gorm.io/plugin/dbresolver v1.4.1
@@ -13,7 +13,6 @@ require (
 require (
 	github.com/dustin/go-humanize v1.0.1 // indirect
 	github.com/glebarez/go-sqlite v1.21.1 // indirect
-	github.com/glebarez/sqlite v1.8.0 // indirect
 	github.com/go-sql-driver/mysql v1.7.0 // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/jackc/pgpassfile v1.0.0 // indirect
@@ -22,8 +21,10 @@ require (
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/mattn/go-isatty v0.0.19 // indirect
-	github.com/mattn/go-sqlite3 v1.14.16 // indirect
 	github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec // indirect
+	github.com/tidwall/gjson v1.14.4 // indirect
+	github.com/tidwall/match v1.1.1 // indirect
+	github.com/tidwall/pretty v1.2.1 // indirect
 	golang.org/x/crypto v0.8.0 // indirect
 	golang.org/x/mod v0.8.0 // indirect
 	golang.org/x/sys v0.9.0 // indirect

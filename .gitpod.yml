@@ -5,5 +5,5 @@
 # Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
 
 tasks:
-  - init: pnpm install && next build
+  - init: pnpm install && pnpm install vercel -g && pnpm install next -g && next build
     command: next dev

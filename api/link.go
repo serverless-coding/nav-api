@@ -2,13 +2,19 @@ package handler
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"net/http"
 
 	"github.com/serverless-coding/frontend-nav/api/db"
 	"github.com/serverless-coding/frontend-nav/api/dto"
 	"github.com/serverless-coding/frontend-nav/api/model"
+	"github.com/serverless-coding/frontend-nav/api/util"
 )
+
+func init() {
+	util.Init()
+}
 
 func GetLinks() ([]*model.Link, error) {
 	link := db.Use(db.GetDB()).ReadDB().Link
@@ -23,13 +29,15 @@ func GetLinks() ([]*model.Link, error) {
 
 type GetLinksRes struct {
 	dto.BaseRespose
-	Data []*model.Link
+	Data []*model.Link `json:"data,omitempty"`
 }
 
 func Links(w http.ResponseWriter, r *http.Request) {
 	ls, _ := GetLinks()
 	res := GetLinksRes{
-		Data: ls,
+		BaseRespose: dto.Success(),
+		Data:        ls,
 	}
-	fmt.Fprint(w, res)
+	jv, _ := json.Marshal(res)
+	fmt.Fprint(w, string(jv))
 }
