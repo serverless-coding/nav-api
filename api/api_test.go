@@ -6,7 +6,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/serverless-coding/frontend-nav/api/util"
+	"github.com/serverless-coding/frontend-nav/api/_pkg/util"
 	"gopkg.in/ini.v1"
 	"gopkg.in/yaml.v3"
 )

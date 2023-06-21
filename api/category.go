@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/serverless-coding/frontend-nav/api/db"
-	"github.com/serverless-coding/frontend-nav/api/dto"
-	"github.com/serverless-coding/frontend-nav/api/model"
+	"github.com/serverless-coding/frontend-nav/api/_pkg/db"
+	"github.com/serverless-coding/frontend-nav/api/_pkg/dto"
+	"github.com/serverless-coding/frontend-nav/api/_pkg/model"
 )
 
 func GetCategorys() ([]*model.Category, error) {

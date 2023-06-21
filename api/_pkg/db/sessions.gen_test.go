@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/serverless-coding/frontend-nav/api/model"
+	"github.com/serverless-coding/frontend-nav/api/_pkg/model"
 	"gorm.io/gen"
 	"gorm.io/gen/field"
 	"gorm.io/gorm/clause"

@@ -69,8 +69,8 @@ pnpm dev
 
 修改schema.prisma和.env里的配置
 
+## vercel 里go的api
 
-gentool -tables "accounts,category,link,sessions,users,verification_tokens" -dsn "postgresql://postgres:iQW2h.vAsy4NdH4@db.hcnrthggzjnngadpnlrs.supabase.co:5432/postgres" -db postgres -outPath ./api/db -withUnitTest true 
+不是api的util代码必须放在_+目录名下如_pkg
 
-
-gentool -dsn "postgresql://postgres:iQW2h.vAsy4NdH4@db.hcnrthggzjnngadpnlrs.supabase.co:5432/postgres" -db postgres -outPath ./api/db -withUnitTest true -tables "accounts,category,link,sessions,users,verification_tokens"
+https://github.com/vercel/vercel/discussions/7000

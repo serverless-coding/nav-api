@@ -16,7 +16,7 @@ import (
 
 	"gorm.io/plugin/dbresolver"
 
-	"github.com/serverless-coding/frontend-nav/api/model"
+	"github.com/serverless-coding/frontend-nav/api/_pkg/model"
 )
 
 func newAccount(db *gorm.DB, opts ...gen.DOOption) account {
