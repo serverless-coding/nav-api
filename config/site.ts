@@ -14,4 +14,8 @@ export const siteConfig = {
     github: "https://github.com/serverless-coding/frontend-nav",
     docs: "",
   },
+  icon: {
+    site: "/next.svg",
+    default: "/vercel.svg",
+  }
 }

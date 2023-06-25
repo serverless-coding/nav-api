@@ -1,8 +1,10 @@
+import { siteConfig } from '@/config/site';
 import type { Prisma, Link as SiteLink, Category } from '@prisma/client';
 import { randomInt, randomUUID } from 'crypto';
 
 
-const _defaultIcon = "https://nav.programnotes.cn/vercel.svg"
+// 默认图标
+const _defaultIcon = siteConfig.icon.default
 
 class category implements CategoryWithLinks {
   id: string;
@@ -136,7 +138,5 @@ export interface CategoryWithLinks {
   title: string;
   description: string;
   rank: number;
-  // created_at: string;
-  // updated_at: string;
   links: SiteLink[];
 }
