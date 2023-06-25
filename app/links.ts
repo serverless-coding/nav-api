@@ -52,7 +52,7 @@ class siteLink implements SiteLink {
 
 const _default: CategoryData = {
   code: 200,
-  message: "",
+  message: "success",
   data: [
     new category("Tool", "", [
       new siteLink("frp", "https://github.com/fatedier/frp", "", "A fast reverse proxy,反向代理工具"),
@@ -81,7 +81,7 @@ export default async function getNavLinks(): Promise<CategoryWithLinks[]> {
   const controller = new AbortController();
   const timeout = setTimeout(() => {
     controller.abort();
-  }, 80); // 5000ms 超时时间
+  }, 50); // 5000ms 超时时间
 
   const result: CategoryData = await fetch("https://nav.programnotes.cn/api/link", { signal: controller.signal })
     .then(res => {
@@ -89,6 +89,12 @@ export default async function getNavLinks(): Promise<CategoryWithLinks[]> {
         return res.json();
       }
       return _default;
+    })
+    .then((data: CategoryData) => {
+      if (data.data.length <= 1) {
+        return _default;
+      }
+      return data;
     })
     .then((data: CategoryData) => {
       data.data.map((c) => {
