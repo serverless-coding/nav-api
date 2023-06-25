@@ -7,5 +7,8 @@ import (
 
 func Init() {
 	conf := config.ParseConfig()
+	if conf.DatabaseUrl==""{
+		return
+	}
 	db.Init(conf.DatabaseUrl)
 }

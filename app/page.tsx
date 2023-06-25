@@ -8,11 +8,11 @@ export const revalidate = 24 * 60 * 60;
 
 export default async function IndexPage() {
   const navResources = await getNavLinks();
-  const navItems = navResources.map((n: { title: any; icon: any; id: any }) => {
+  const navItems = Array.from(navResources).map((n: { title: any; icon: any; id: any }) => {
     return {
-      title: n.title,
-      icon: n.icon,
-      id: n.id,
+      title: n?.title,
+      icon: n?.icon,
+      id: n?.id,
     }
   })
   return <div className="container relative mx-auto min-h-screen w-full px-0">
@@ -23,7 +23,7 @@ export default async function IndexPage() {
       <div className="sm:pl-[16rem]">
         {/* @ts-expect-error Async Server Component */}
         <SiteHeader navItems={navItems} />
-        <LinkContent navResources={navResources} />
+        <LinkContent navResources={Array.from(navResources)} />
         <SiteFooter />
       </div>
     </div>
