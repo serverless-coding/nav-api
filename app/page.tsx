@@ -8,7 +8,7 @@ export const revalidate = 24 * 60 * 60;
 
 export default async function IndexPage() {
   const navResources = await getNavLinks();
-  const navItems = Array.from(navResources).map((n: { title: any; icon: any; id: any }) => {
+  const navItems = navResources.map((n: { title: any; icon: any; id: any }) => {
     return {
       title: n?.title,
       icon: n?.icon,
@@ -23,7 +23,7 @@ export default async function IndexPage() {
       <div className="sm:pl-[16rem]">
         {/* @ts-expect-error Async Server Component */}
         <SiteHeader navItems={navItems} />
-        <LinkContent navResources={Array.from(navResources)} />
+        <LinkContent navResources={navResources} />
         <SiteFooter />
       </div>
     </div>
