@@ -2,6 +2,9 @@ package db
 
 import (
 	"fmt"
+	"log"
+	"os"
+	"time"
 
 	"sync"
 
@@ -11,8 +14,9 @@ import (
 )
 
 var (
-	_db   *gorm.DB
-	_once sync.Once
+	_db            *gorm.DB
+	_once          sync.Once
+	_slowThreshold = time.Millisecond * 100
 )
 
 type Stdout struct {
@@ -25,9 +29,15 @@ func (Stdout) Printf(s string, args ...interface{}) {
 func Init(url string, _ ...*gorm.Option) {
 	_once.Do(func() {
 		var err error
-		_db, err = gorm.Open(postgres.Open(url), &gorm.Config{
-			Logger: logger.New(Stdout{}, logger.Config{LogLevel: logger.Info}),
-		})
+		config := logger.Config{
+			SlowThreshold: time.Duration(_slowThreshold),
+			Colorful:      true,
+			LogLevel:      logger.Info,
+		}
+		_db, err = gorm.Open(postgres.Open(url),
+			&gorm.Config{
+				Logger: logger.New(log.New(os.Stderr, "\r\n", log.LstdFlags), config),
+			})
 		if err != nil {
 			panic(fmt.Errorf("open db %q fail: %w", url, err))
 		}
