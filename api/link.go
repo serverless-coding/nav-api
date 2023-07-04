@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/serverless-coding/frontend-nav/api/_pkg/dto"
-	"github.com/serverless-coding/frontend-nav/api/_pkg/query"
-	"github.com/serverless-coding/frontend-nav/api/_pkg/util"
+	"github.com/serverless-coding/nav-api/api/_pkg/dto"
+	"github.com/serverless-coding/nav-api/api/_pkg/query"
+	"github.com/serverless-coding/nav-api/api/_pkg/util"
 )
 
 func init() {

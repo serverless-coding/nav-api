@@ -1,4 +1,4 @@
-module github.com/serverless-coding/frontend-nav
+module github.com/serverless-coding/nav-api
 
 go 1.19
 
@@ -8,7 +8,7 @@ require (
 	gopkg.in/yaml.v3 v3.0.1
 	gorm.io/driver/postgres v1.5.2
 	gorm.io/gen v0.3.22
-	gorm.io/gorm v1.25.1
+	gorm.io/gorm v1.25.2
 	gorm.io/plugin/dbresolver v1.4.1
 )
 

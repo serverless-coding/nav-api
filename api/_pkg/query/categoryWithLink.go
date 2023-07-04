@@ -1,8 +1,8 @@
 package query
 
 import (
-	"github.com/serverless-coding/frontend-nav/api/_pkg/db"
-	"github.com/serverless-coding/frontend-nav/api/_pkg/model"
+	"github.com/serverless-coding/nav-api/api/_pkg/db"
+	"github.com/serverless-coding/nav-api/api/_pkg/model"
 	"gorm.io/gorm"
 )
 

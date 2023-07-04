@@ -6,10 +6,10 @@ import (
 	"os"
 	"testing"
 
-	"github.com/serverless-coding/frontend-nav/api/_pkg/db"
-	"github.com/serverless-coding/frontend-nav/api/_pkg/model"
-	"github.com/serverless-coding/frontend-nav/api/_pkg/query"
-	"github.com/serverless-coding/frontend-nav/api/_pkg/util"
+	"github.com/serverless-coding/nav-api/api/_pkg/db"
+	"github.com/serverless-coding/nav-api/api/_pkg/model"
+	"github.com/serverless-coding/nav-api/api/_pkg/query"
+	"github.com/serverless-coding/nav-api/api/_pkg/util"
 	"gopkg.in/ini.v1"
 	"gopkg.in/yaml.v3"
 )

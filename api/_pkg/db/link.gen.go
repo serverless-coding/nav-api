@@ -16,7 +16,7 @@ import (
 
 	"gorm.io/plugin/dbresolver"
 
-	"github.com/serverless-coding/frontend-nav/api/_pkg/model"
+	"github.com/serverless-coding/nav-api/api/_pkg/model"
 )
 
 func newLink(db *gorm.DB, opts ...gen.DOOption) link {
