@@ -14,6 +14,7 @@ func ParseConfig() *Config {
 	c.Google.Secret = os.Getenv("GOOGLE_CLIENT_SECRET")
 	// os.Getenv("_CLIENT_ID")
 	// os.Getenv("_CLIENT_SECRET")
+
 	return c
 }
 
@@ -28,4 +29,7 @@ type Config struct {
 type OAuthConfig struct {
 	ClientId string `json:"client_id,omitempty"`
 	Secret   string `json:"secret,omitempty"`
+}
+
+type RedisConfig struct {
 }
